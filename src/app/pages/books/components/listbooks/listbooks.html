@@ -1,0 +1,32 @@
+<div class="row">
+  <button type="button" class="btn btn-primary" style="margin: -10px 0 10px 10px;" routerLink="/pages/books/addbook">Add New Book</button>
+</div>
+<div class="horizontal-scroll">
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th class="table-id">#</th>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of filteredbooks; let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{book.name}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.price}}</td>
+      <td>
+        <div class="button-wrapper">
+          <button type="button" class="btn btn-warning btn-xs" (click)="editBook(book.id)">Edit</button>
+
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

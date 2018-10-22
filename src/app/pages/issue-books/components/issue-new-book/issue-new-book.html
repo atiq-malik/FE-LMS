@@ -1,0 +1,40 @@
+  <!--<div class="col-sm-6">-->
+    <div class="form-group" [class.has-error]="(data.student_id == undefined || data.student_id == '') && submitted">
+      <label for="roll_num">Select Student</label>
+      <select class="form-control" id="roll_num" placeholder="Roll No" [(ngModel)]="data.student_id">
+        <ng-container *ngFor="let student of students">
+          <option value="{{student.id}}">
+            {{student.name}}
+          </option>
+        </ng-container>
+
+      </select>
+    </div>
+
+    <div class="form-group" [class.has-error]="(data.book_id == undefined || data.book_id == '') && submitted">
+      <label for="isbn">Select Book</label>
+      <select class="form-control" id="isbn" placeholder="Book" [(ngModel)]="data.book_id">
+        <ng-container *ngFor="let book of filteredbooks">
+          <option value="{{book.id}}">
+            {{book.name}}
+          </option>
+        </ng-container>
+
+      </select>
+
+    </div>
+
+    <!--<div class="form-group">-->
+      <!--<input readonly type="text" class="form-control" id="book-name" [(ngModel)]="data.title">-->
+    <!--</div>-->
+
+      <div class="form-group" [class.has-error]="(data.expected_return_date == undefined || data.expected_return_date == '') && submitted">
+        <label for="expect_date">Expected Return Date</label>
+        <input type="date" class="form-control" id="expect_date"
+               placeholder="Expected Return Date" [(ngModel)]="data.expected_return_date">
+      </div>
+
+
+
+
+<button type="submit" class="btn btn-primary" (click)="add()" [disabled]="sendingRequest"><i *ngIf="sendingRequest" class="fa fa-spin fa-circle-o-notch"></i> Save</button>

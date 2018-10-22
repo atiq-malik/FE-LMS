@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.name == undefined || data.name == '') && submitted">
+      <label for="student_name">Student Name</label>
+      <input type="text" class="form-control" id="student_name" placeholder="User Name" [(ngModel)]="data.name">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.rollno == undefined || data.rollno == '') && submitted">
+      <label for="roll_num">Roll No</label>
+      <input type="text" class="form-control" id="roll_num" placeholder="Roll No" [(ngModel)]="data.rollno">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.email == undefined || data.email == '') && submitted">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="data.email">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.address == undefined || data.address == '') && submitted">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Address" [(ngModel)]="data.address">
+    </div>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-primary" (click)="add()" [disabled]="sendingRequest"><i *ngIf="sendingRequest" class="fa fa-spin fa-circle-o-notch"></i> Save</button>

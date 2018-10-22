@@ -1,0 +1,28 @@
+<div *ngIf="!loading">
+
+<div class="col-sm-6">
+  <div class="form-group" [class.has-error]="(data.name == undefined || data.name == '') && submitted">
+    <label for="book_name">Book Name</label>
+    <input type="text" class="form-control" id="book_name" placeholder="Book Name" [(ngModel)]="data.name" value="{{data.name}}">
+  </div>
+</div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.author == undefined || data.author == '') && submitted">
+      <label for="author">Author</label>
+      <input type="text" class="form-control" id="author" placeholder="Author Name" [(ngModel)]="data.author" value="{{data.author}}">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.isbn == undefined || data.isbn == '') && submitted">
+      <label for="isbn">ISBN Number</label>
+      <input type="text" class="form-control" id="isbn" placeholder="ISBN Number" [(ngModel)]="data.isbn" value="{{data.isbn}}">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.price == undefined || data.price == '') && submitted">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" placeholder="Price" [(ngModel)]="data.price" value="{{data.price}}">
+    </div>
+  </div>
+<button type="submit" class="btn btn-primary" (click)="save()" [disabled]="sendingRequest"><i *ngIf="sendingRequest" class="fa fa-spin fa-circle-o-notch"></i> Update</button>
+</div>

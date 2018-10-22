@@ -1,0 +1,39 @@
+<div *ngIf="!loading">
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.title == undefined || data.title == '') && submitted">
+      <label for="user_name">Student Name</label>
+      <input readonly type="text" class="form-control" id="user_name" placeholder="User Name" [(ngModel)]="data.title">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.title == undefined || data.title == '') && submitted">
+      <label for="book_name">Book Name</label>
+      <input readonly type="text" class="form-control" id="book_name" placeholder="Book Name" [(ngModel)]="data.title">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.isbn == undefined || data.isbn == '') && submitted">
+      <label for="isbn">ISBN</label>
+      <input readonly type="number" class="form-control" id="isbn" placeholder="ISBN Number" [(ngModel)]="data.isbn">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="book_issued_date">Book Issued Date</label>
+      <input readonly type="text" class="form-control" id="book_issued_date" placeholder="Book Issued Date" [(ngModel)]="order.created_at">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label for="book_returned_date">Book Returned Date</label>
+      <input readonly type="text" class="form-control" id="book_returned_date" placeholder="Book Returned Date" [(ngModel)]="order.created_at">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group" [class.has-error]="(data.price == undefined || data.price == '') && submitted">
+      <label for="fine">Fine</label>
+      <input type="number" class="form-control" id="fine" placeholder="Fine" [(ngModel)]="data.price">
+    </div>
+  </div>
+<button type="submit" class="btn btn-primary" (click)="save()" [disabled]="sendingRequest"><i *ngIf="sendingRequest" class="fa fa-spin fa-circle-o-notch"></i> Return Book</button>
+</div>
