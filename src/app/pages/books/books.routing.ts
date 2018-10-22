@@ -4,8 +4,6 @@ import { AddBookComponent } from './components/addbook/addbook.component';
 import { ListBooksComponent } from './components/listbooks/listbooks.component';
 import { EditBooksComponent } from './components/editbooks/editbooks.component';
 import {AuthGuard} from "../auth.guard";
-//import {ViewOfficeAccountComponent} from "./components/viewofficeaccounts/viewofficeaccount.component";
-//import {EditOfficeAccountsComponent} from "./components/editofficeaccounts/editofficeaccounts.component";
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [

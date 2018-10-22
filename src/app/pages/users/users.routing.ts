@@ -4,8 +4,6 @@ import { AddUserComponent } from './components/adduser/adduser.component';
 import { ListUsersComponent } from './components/listusers/listusers.component';
 import { EditUsersComponent } from './components/editusers/editusers.component';
 import {AuthGuard} from "../auth.guard";
-//import {ViewOfficeAccountComponent} from "./components/viewofficeaccounts/viewofficeaccount.component";
-//import {EditOfficeAccountsComponent} from "./components/editofficeaccounts/editofficeaccounts.component";
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
